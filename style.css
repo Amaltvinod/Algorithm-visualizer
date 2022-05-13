@@ -1,0 +1,30 @@
+body{
+    margin:0px;
+    
+    background-color:#140A56;
+}
+.navbar{
+    
+    margin:0px;
+    border:0px;
+    width:auto;
+    height:70px;
+    background-color: #090330;
+}
+ul{
+    padding-top:20px;
+    margin:0px;
+    list-style-type: none;
+}
+
+.title_algo{ 
+    color:aliceblue;
+    text-decoration: none;
+    float:left;
+    padding-left:90px;
+    
+}
+.title_algo:hover{
+  
+    
+}
