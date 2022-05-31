@@ -1,30 +1,108 @@
-body{
-    margin:0px;
-    
-    background-color:#140A56;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+*{
+    padding:0%;
+    margin:0%;
+    border: 0%;
+    text-decoration: none;
 }
 .navbar{
-    
-    margin:0px;
-    border:0px;
-    width:auto;
-    height:70px;
-    background-color: #090330;
-}
-ul{
-    padding-top:20px;
-    margin:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    color:white;
     list-style-type: none;
+    background-color: #090330;
+    padding: 20px 20px 20px;
+    height: 35px;
+    width: 100%;
+    text-decoration: none;
+    font-family: "Roboto",sans-serif;
+}
+body{
+background-color: #140A56;
+overflow: hidden;
+}
+.list-content{
+    color:white;
+}
+.bgimg{
+
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}
+.img-div{
+    height: 100%;
+    width: 100%; 
+    position: relative;
+}
+.txtonimg1{
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-weight: bold;
+    font-size:150px;
+   
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .05em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+    letter-spacing: .001em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s steps(30) infinite;
 }
 
-.title_algo{ 
-    color:aliceblue;
-    text-decoration: none;
-    float:left;
-    padding-left:90px;
-    
+.txtonimg2{
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-weight: bold;
+    font-size:150px;
+    height: fit-content;
+    animation-delay: 7s;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .05em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+    letter-spacing: .001em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(35, end)
+     
+
+  }
+.txtonimg3{
+    color: white;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-weight: bold;
+    font-size:150px;
+    height: min-content;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    /* border-right: .05em solid orange; The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+    letter-spacing: .001em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end)
+      
+
 }
-.title_algo:hover{
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+    
+  }
   
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: tomato; }
+  }
     
-}
+    
+     
