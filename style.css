@@ -1,15 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 *{
     padding:0%;
     margin:0%;
     border: 0%;
     text-decoration: none;
 }
+.logo{
+    position: absolute;
+    left:5px;
+    top: -35px;
+    width: 150px;
+    height: 150px;
+
+
+}
 .navbar{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-    color:white;
+    color:#c8bfc7;
     list-style-type: none;
     background-color: #090330;
     padding: 20px 20px 20px;
@@ -23,7 +33,10 @@ background-color: #140A56;
 overflow: hidden;
 }
 .list-content{
-    color:white;
+    color:#c8bfc7;
+    position: absolute;
+    top: 28px;
+
 }
 .bgimg{
 
@@ -36,73 +49,49 @@ overflow: hidden;
     width: 100%; 
     position: relative;
 }
-.txtonimg1{
+.fon1{ 
+    /* font for the front page title slidein */
+    margin-left: 10px;
+    font-family: 'Dancing Script', cursive;
+
+}
+.fon2{ 
+    /* font for the front page title slidein */
+    margin-left: 10px;
+    font-family: 'Dancing Script', cursive;
+ 
+
+}
+.fon3{ 
+    /* font for the front page title slidein */
+    margin-left: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+.txtonimg{
     color: white;
     position: absolute;
     top: 8px;
     left: 16px;
-    font-weight: bold;
+    
     font-size:150px;
+    overflow:hidden;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-name: slidein;
    
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .05em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
-    letter-spacing: .001em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s steps(30) infinite;
 }
 
-.txtonimg2{
-    color: white;
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    font-weight: bold;
-    font-size:150px;
-    height: fit-content;
-    animation-delay: 7s;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    /* border-right: .05em solid orange; The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
-    letter-spacing: .001em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(35, end)
-     
-
-  }
-.txtonimg3{
-    color: white;
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    font-weight: bold;
-    font-size:150px;
-    height: min-content;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    /* border-right: .05em solid orange; The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
-    letter-spacing: .001em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(30, end)
-      
-
-}
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-    
-  }
+@keyframes slidein {
+    from {
+        opacity: 0;
+      margin-left: 100%;
+      width: 300%;
+    }
   
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: tomato; }
-  }
-    
-    
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+  
      
