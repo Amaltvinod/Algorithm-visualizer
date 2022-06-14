@@ -6,6 +6,10 @@
     border: 0%;
     text-decoration: none;
 }
+body{
+    background-color: #140A56;
+    overflow: hidden;
+    }
 .logo{
     position: absolute;
     left:5px;
@@ -16,28 +20,79 @@
 
 }
 .navbar{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    color:#c8bfc7;
-    list-style-type: none;
+
+    border: 0px;
     background-color: #090330;
     padding: 20px 20px 20px;
     height: 35px;
     width: 100%;
+
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    padding: 20px 20px 20px;
+    color:#c8bfc7;
+    list-style-type: none;
     text-decoration: none;
     font-family: "Roboto",sans-serif;
-}
-body{
-background-color: #140A56;
-overflow: hidden;
 }
 .list-content{
     color:#c8bfc7;
     position: absolute;
     top: 28px;
+}
+/* .navtoggle{
+    background-color: transparent;
+} */
+.dropdown1{
+    position: relative;
+    top: 15px;
+    right: 20px;
+    border:0.5px solid #140A56;
+    border-collapse: collapse;
+    margin: 10px;
+    z-index: 5;
+    background-color: #090330;
+    height: 122px;
+    width: 300px;
+}
+.sublinav{
+    padding: 10px;
+    list-style-type: none;
+    padding: 0px;
 
 }
+.subnav{
+    padding: 10px;
+    list-style-type: none;
+    border:0px;
+}
+.sublinav li a{
+    color: #c8bfc7;
+    margin-left: 60px;
+
+
+}
+.sublinav li{
+    border-bottom: 1px solid #140A56;
+    /* border-top: 1px solid #c8bfc7; */
+    padding:20px;
+}
+.dropdown2{
+    position: relative;
+    top: 15px;
+    right: 20px;
+    border:0.5px solid #140A56;
+    border-collapse: collapse;
+    margin: 10px;
+    z-index: 5;
+    background-color: #090330;
+    height: 304px;
+    width: 300px;
+}
+
 .bgimg{
 
     height: 100%;
@@ -47,7 +102,7 @@ overflow: hidden;
 .img-div{
     height: 100%;
     width: 100%; 
-    position: relative;
+   
 }
 .fon1{ 
     /* font for the front page title slidein */
@@ -70,7 +125,7 @@ overflow: hidden;
 .txtonimg{
     color: white;
     position: absolute;
-    top: 8px;
+    top: 80px;
     left: 16px;
     
     font-size:150px;
