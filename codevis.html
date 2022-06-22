@@ -5,20 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script  src="script.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-    <style>
-        body{
-            overflow: hidden;
-        }
-    </style>
+   
+
 </head>
     <body>
         <div class="menu-bar">
             <ul>
-                <li><img src="Amanda Wood.png" alt="logo-design" class="logo"></li>
+                <li><img src="Amanda Wood.png" alt="" class="logo"></li>
                 <li><a href="#">HOME</a></li>
                 <li><a href="#">SEARCHING</a>
                     <div class="sub-menu-search">
@@ -43,24 +40,16 @@
                 <li><a href="#">ABOUT</a></li>
             </ul>
         </div>
-       
-                <div class="img-div">
-                    <img class="bgimg" src="newbg.png" alt="background-img">
-                    <h1 >
-                            <div class="txtonimg"><pre class="fon1">Let's   Explore   a</pre><br> </div>
-                            <div class="txtonimg"><br><pre class="fon2">new   way   to   deal </pre></div>
-                            <div class="txtonimg"><br><br><pre class="fon3">with     algorithms</pre></div>
-                    </h1> 
-                    <div class="txtonimg1">
-                        <h4 class="fon4">Beginner?No worries....</h4>
-                        <button class="beginbtton" onclick=" location.href='beginner.html' ">Get's Started</button>
-                    </div>
-                </div>
-              
-                
-        
+        <div class="codevis">
 
+    
+         
+            <div class="codeslide" id="toggle">
+                <button class="sliderbtn" onclick="visibility() "><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" ><path d="M18.75 36.3 16.3 33.85 26.2 23.95 16.3 14.05 18.75 11.6 31.1 23.95Z"/></svg></button>
+            </div>
+            <button class="new-sliderbtn" id="btn-toggle" onclick="visibility()"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z"/></svg></button>
 
+        </div>
         <script  src="script.js"></script>
     </body>
-</html>
+</html> 
