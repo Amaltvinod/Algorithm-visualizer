@@ -6,19 +6,22 @@
 /* ------------------------------------------------------------------------------------------------------------------------------------------- */
 
 *{
-    padding:0px;
-    margin:0px;
+    padding:0;
+    margin:0;
     text-decoration: none;
 }
 body{
     background-color: #140A56;
     /* overflow: hidden; */
+    width: 100vw;
+    height: 100vh;
+    
 }
 .logo{
     position: absolute;
-    left:5px;
-    top:-27px;
-    width: 130px;
+    left:1vw;
+    top:-2.5vw;
+    width: 10vw;
 
 }
 
@@ -26,16 +29,24 @@ body{
 .menu-bar{
     background-color:#090330;
     text-align:center;
+    font-family: 'Roboto', sans-serif;  
+    font-size: 1.2vw;
+    height: 80px;
+    width: 100%;
+    
+
 
 }
 .menu-bar ul{
-    display: inline-flex;
+    display:flex;
     list-style: none;
     color: #ffff;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
     
 }
 .menu-bar ul li{
-    width: 130;
     margin:15px;
     padding:15px;
     
@@ -48,14 +59,16 @@ body{
 }
 .menu-bar ul li a:hover{
     background-color: #002735;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .sub-menu-search{
     display: none;
+
 }
 .sub-menu-sort{
     display: none;
+
     
 }
 .menu-bar ul li:hover .txtonimg{
@@ -65,10 +78,13 @@ body{
 .menu-bar ul li:hover .sub-menu-search{
     z-index: 5;
     display: block;
+    white-space: nowrap;
+    height:6.5em;
+    border-radius: 20px 20px;
     position: fixed;
     background-color: #090330;
     margin-top: 15px;
-    margin-left: -15px;
+    margin-left: -25px; 
 }
 .menu-bar ul li:hover .sub-menu-search ul{
     display: block;
@@ -76,6 +92,7 @@ body{
 }
 .menu-bar ul li:hover .sub-menu-search ul li{
     width: 150px;
+    display: block;
     padding: 10px;
     border-bottom: 1px dotted #ffff;
     background: transparent;
@@ -88,6 +105,9 @@ body{
     z-index: 5;
     display: block;
     position: fixed;
+    white-space: nowrap;
+    border-radius: 20px 20px ;
+    height: 12.5em;
     background-color: #090330;
     margin-top: 15px;
     margin-left: -15px;
@@ -120,46 +140,46 @@ body{
     object-fit:cover;
 }
 .img-div{
+
     height: 100%;
     width: 100%; 
    
 }
-.fon1{ 
+ .fon1,.fon2,.fon3{ 
     /* font for the front page title slidein */
     margin-left: 10px;
+    text-align: justify;
     font-family: 'Dancing Script', cursive;
 
 }
-.fon2{ 
-    /* font for the front page title slidein */
-    margin-left: 10px;
-    font-family: 'Dancing Script', cursive;
- 
 
-}
-.fon3{ 
-    /* font for the front page title slidein */
-    margin-left: 10px;
-    font-family: 'Dancing Script', cursive;
-}
 .txtonimg{
+
     color: white;
-    position: absolute;
-    top: 80px;
-    left: 16px;
-    font-size:150px;
+    font-size:2.8em;
     overflow:hidden;
     animation-duration: 3s;
     animation-timing-function: ease;
     animation-name: slidein;
    
 }
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    position:relative;
+    top: -45.5em;
+    left: 3em;  
+    justify-content: space-between;
+}
 .txtonimg1{ 
     color: white;
-    font-size:40px;
-    position: absolute;
-    bottom: 25px;
-    left: 16px;    
+
+    font-size:2.3em;
+    display: flex;
+    margin: 2em 0;
+    padding-top: 10px;
     animation-duration: 3s;
     animation-timing-function: ease;
     animation-name: slidein;
@@ -178,9 +198,6 @@ body{
     border: none;
     border-radius: 50px;
     padding: 7px;
-    position: relative;
-    left: 360px;
-    bottom: 49px;
     animation-duration: 3s;
     animation-timing-function: ease;
     animation-name: slowvisi;
@@ -221,18 +238,28 @@ body{
 .codevis{
     width: 100%;
     height: 100%;
+    display: inline-block;
+
    /* position: relative;
     z-index: 3;
     margin: 0px; */
 
  
 }
+.newdivin{
+    background-color: wheat;
+    height: 200px;
+    width: 100%;
+}
 .codeslide{
+    background-color: #140A56;
     width: 45%;
     height: 200vw;
     border-left:2px solid #7A9B76;
-    position: relative;
-    right: -54.2vw;
+    position: absolute;
+    right: 0vw;
+    display: inline-block;
+
     /*top: -213vw;
     left: 700px;
     z-index: 4;
@@ -292,7 +319,7 @@ body{
     margin-left:38px;
     padding-top: 20px;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -305,3 +332,44 @@ body{
 
 }
 
+
+/* css for  linearsearch.html */
+.codevis{
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
+.codevis div{
+    width: 50%;
+}
+.codevis .array{
+   
+    display: flex;
+    justify-content: center;
+  
+
+}
+.codevis .array  div{
+    display: flex;
+    top:100px;
+    justify-content: center;
+    border: 5px solid white;
+    margin-left: 10px;
+    height: 100px;
+    color: white;
+}
+
+
+#textbox ,#button{
+    height: 50px;
+    width: 100px;
+    margin-right: 20px;
+    position: absolute;
+    bottom:50px;
+    transform: translateY(50);
+}
+#button{
+    position: absolute;
+    bottom:50px;
+    left: 70px;
+}
