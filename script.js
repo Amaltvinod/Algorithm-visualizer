@@ -16,7 +16,7 @@ function generate(){
     }
 }
 
-
+// just toggle of side window
 function visibility(){
     document.getElementById("toggle").classList.toggle("visibility")
     document.getElementById("btn-toggle").classList.toggle("visible")

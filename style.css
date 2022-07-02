@@ -373,3 +373,14 @@ body{
     bottom:50px;
     left: 70px;
 }
+.tab{
+    tab-size: 3;
+}
+.psuedo{
+    color: white;
+    font-size: 25px;
+
+}
+var{
+    color: orange;
+}
