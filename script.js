@@ -1,7 +1,17 @@
-window.onload=function(){
+window.onload=async function(){
     generate();
+  
 
+//  loader class
+//     var loader = document.getElementById("wiz");
+//     var load = document.getElementById("wizard");
+    
+//     window.addEventListener("load",function(){
+//         loader.style.display="none";
+//         load.style.display="none";
+//     })  
 }
+
 const arr=[];
 function generateRandom(id){
      element=document.getElementById(id);
@@ -20,12 +30,13 @@ function generate(){
 function visibility(){
     document.getElementById("toggle").classList.toggle("visibility")
     document.getElementById("btn-toggle").classList.toggle("visible")
-
-
 }
+
+
 function sleep(ms){
     return new Promise(resolve=>setTimeout(resolve,ms));
 }
+// linear search logic
 async function linearsearch(){
     let key=document.getElementById("textbox").value;
     key=parseInt(key);
@@ -33,13 +44,17 @@ async function linearsearch(){
     for(let i=0;i<6;i++){
         let temp=i+1;
         ele=document.getElementById(temp.toString());
-        ele.style.backgroundColor="yellow";
-        await sleep(1500);
+        ele.style.animation= "animate 3s linear 0s infinite normal forwards";
+        
+        await sleep(2500);
         if(arr[i]==key){
-            ele.style.backgroundColor="green";
+            ele.style.animation= "me 2s linear 0s infinite normal forwards";
+            
+            // ele.style.backgroundColor="green";
             break;
         }else{
-            ele.style.backgroundColor="red";
+            ele.style.animation= "newani 4s ease 0s 1 normal forwards";
+
             await sleep(1500);
 
         }
@@ -50,10 +65,11 @@ function notNeeded(low,mid){
     while(low<=mid){
         let temp=low+1;
         element.getElementById(temp.toString());
-        element.style.backgroundColor="red";
+        element.style.animation="red";
         low++;
     }
 }
+
 
 async function binarysearch(){
     let key=document.getElementById("textbox").value;
@@ -86,7 +102,9 @@ async function binarysearch(){
             }
         }
 }
-   
+
+
+
 
 
 
