@@ -1,16 +1,26 @@
 window.onload=async function(){
+    loader();
     generate();
-  
+
+}
 
 //  loader class
+async function loader(){
+document.getElementById("wizard").style.display="block";
+if(document.getElementById("wizard").style.display=="block"){
+    await sleep(2000);
+        document.getElementById("wizard").style.display="none";
+    }
+}
+// function loader(){
 //     var loader = document.getElementById("wiz");
 //     var load = document.getElementById("wizard");
-    
+//     await sleep(2000);
 //     window.addEventListener("load",function(){
 //         loader.style.display="none";
 //         load.style.display="none";
 //     })  
-}
+// }
 
 const arr=[];
 function generateRandom(id){

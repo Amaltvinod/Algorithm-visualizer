@@ -161,10 +161,10 @@ body{
     color: white;
     font-size:2.8em;
     overflow:hidden;
-    animation-duration: 3s;
-    animation-timing-function: ease;
     animation-name: slidein;
-   
+    animation-timing-function: ease-in;
+    animation-duration: 3s;
+    
 }
 
 .main-content{
@@ -183,9 +183,9 @@ body{
     display: flex;
     margin: 2em 0;
     padding-top: 10px;
-    animation-duration: 3s;
-    animation-timing-function: ease;
     animation-name: slidein;
+    animation-duration:3s;
+    animation-timing-function: ease-in;
 
 
 }
@@ -456,6 +456,19 @@ var{
    
 	}
 }
+
+/* ------------------------------------------------- */
+
+:root {
+	--gradient-shadow: linear-gradient(
+		45deg,
+        #49F324,
+        red
+	);
+    --color:#49F324;
+    
+}
+
 @keyframes me {
     0% {
         background-position: 0 0;
@@ -474,18 +487,6 @@ var{
         background-color:var(--color);
         background-position: 0 0;
     }
-}
-
-/* ------------------------------------------------- */
-
-:root {
-	--gradient-shadow: linear-gradient(
-		45deg,
-        #49F324,
-        red
-	);
-    --color:#49F324;
-    
 }
 
 
@@ -557,5 +558,7 @@ var{
     animation-timing-function:linear;
     animation-direction: alternate;
     animation-fill-mode:both;
+
+
     
 }
