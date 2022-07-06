@@ -46,13 +46,13 @@ async function linearsearch(){
     for(let i=0;i<6;i++){
         let temp=i+1;
         ele=document.getElementById(temp.toString());
-        ele.style.backgroundColor="yellow";
+        ele.style.animation= "animate 3s linear 0s infinite normal forwards";
         await sleep(1500);
         if(arr[i]==key){
-            ele.style.backgroundColor="green";
+            ele.style.animation= "me 2s linear 0s infinite normal forwards";
             break;
         }else{
-            ele.style.backgroundColor="red";
+            ele.style.animation= "newani 4s ease 0s 1 normal forwards";
             await sleep(1500);
 
         }

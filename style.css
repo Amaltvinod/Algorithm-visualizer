@@ -377,7 +377,9 @@ body{
     font-weight:bolder;
 
 }
-
+.text{
+    text-align: center;
+}
 #textbox ,#button{
  
     display: inline-block;

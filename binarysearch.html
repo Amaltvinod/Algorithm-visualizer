@@ -55,23 +55,47 @@
 
 
             </div>
-            <div class="psuedo">
-                <p>            BinarySearch(int low,int high,int arr[],int key){</p>
-                <div id="col1">       while(low<=high){</div>
-                <div id="col2">          int mid=low+(high-low)/2</div>
-                <div id="col3">         if(key==arr[mid]){</div>
-                <div id="col4">             return mid; </div>
-                <p>                      }else{</p>
-                <div id="col5">             if(key>arr[mid]){</div>
-                <div id="col6">                 low=mid+1;</div>
-                <p>                          }else{</p>
-                <div id="col7">                 high=mid-1;</div>
-                <p>                           }</p>
-                <p>                        }</p>
-                <p >                  }</p>
-                <p>              }</p>
+            <div class="codeslide" id="toggle"> 
+                <button class="sliderbtn" onclick="visibility() "><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" ><path d="M18.75 36.3 16.3 33.85 26.2 23.95 16.3 14.05 18.75 11.6 31.1 23.95Z"/></svg></button>
+                <div class="psuedo">
+                    <!-- <p>            BinarySearch(int low,int high,int arr[],int key){</p>
+                    <div id="col1">       while(low<=high){</div>
+                    <div id="col2">          int mid=low+(high-low)/2</div>
+                    <div id="col3">         if(key==arr[mid]){</div> -->
+                    <!-- <div id="col4">             return mid; </div>
+                    <p>                      }else{</p>
+                    <div id="col5">             if(key>arr[mid]){</div> -->
+                    <!-- <div id="col6">                 low=mid+1;</div>
+                    <p>                          }else{</p>
+                    <div id="col7">                 high=mid-1;</div>
+                    <p>                           }</p>
+                    <p>                        }</p>
+                    <p >                  }</p>
+                    <p>              }</p> -->
 
+                    <pre><code>BinarySearch(int low,int high,int arr[],int key){</code></pre>
+                    <div id="col1"><pre><code><var>while</var>(low<=high){<br>{</code></pre></div>
+                    <div id="col2"><pre><code>  int mid=low+(high-low)/2<br>  {</code></pre></div>
+                    <div id="col3"><pre><code>     <var>if </var>(key==arr[mid]){<br>  }</code></pre></div>
+                    <div id="col4"><pre><code>     <var> return </var> mid; <br> }</code></pre></div>
+                    <div id="col5"><pre><code>  <var>else </var><br>  }</code></pre></div>
+                    <div id="col6"><pre><code>  <var>if </var>(key>arr[mid])<br>}</code></pre></div>
+                    <div id="col7"><pre><code>  low=mid+1;<br>}</code></pre></div>
+                    <div id="col8"><pre><code>{  <var>else</var><br>{</code></pre></div>
+                    <div id="col9"><pre><code><br>high=mid-1;</code></pre></div>
+                    <div id="col10"><pre><code>          }</code></pre></div>
+                    <div id="col11"><pre><code>      }</code></pre></div>
+                    <div id="col12"><pre><code>      }</code></pre></div>
+                    <div id="col13"><pre><code>}</code></pre></div>
+                </div>
             </div>
+    
+        </div>
+    </div>
+     
+    <button class="new-sliderbtn" id="btn-toggle" onclick="visibility()"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z"/></svg></button>
+
+     
         </div>
         <script src="script.js"></script>
     </body>
