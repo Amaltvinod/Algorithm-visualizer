@@ -38,7 +38,6 @@ function visibility(){
 function sleep(ms){
     return new Promise(resolve=>setTimeout(resolve,ms));
 }
-// linear search logic
 async function linearsearch(){
     let key=document.getElementById("textbox").value;
     key=parseInt(key);
@@ -47,17 +46,13 @@ async function linearsearch(){
     for(let i=0;i<6;i++){
         let temp=i+1;
         ele=document.getElementById(temp.toString());
-        ele.style.animation= "animate 3s linear 0s infinite normal forwards";
-        
-        await sleep(2500);
+        ele.style.backgroundColor="yellow";
+        await sleep(1500);
         if(arr[i]==key){
-            ele.style.animation= "me 2s linear 0s infinite normal forwards";
-            
-            // ele.style.backgroundColor="green";
+            ele.style.backgroundColor="green";
             break;
         }else{
-            ele.style.animation= "newani 4s ease 0s 1 normal forwards";
-
+            ele.style.backgroundColor="red";
             await sleep(1500);
 
         }
@@ -148,6 +143,9 @@ async function selectionsort(){
 
 }
    
+
+
+
 
 
 
