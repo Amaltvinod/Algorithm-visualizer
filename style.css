@@ -377,7 +377,9 @@ body{
     font-weight:bolder;
 
 }
-
+.text{
+    text-align: center;
+}
 #textbox ,#button{
  
     display: inline-block;
@@ -536,15 +538,14 @@ var{
 
 
 /* ----------------------------------------- */
+/* preloader style */
+/* ----------------------------------------- */
 #wizard{
     background-color: #090330;
     width: 100%;
     height: 100vh;
     z-index: 100;
     position: fixed;
-
-    
-
 }
 #wiz{
     position: fixed;
@@ -558,7 +559,6 @@ var{
     animation-timing-function:linear;
     animation-direction: alternate;
     animation-fill-mode:both;
-
-
-    
 }
+
+
