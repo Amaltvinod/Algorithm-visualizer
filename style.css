@@ -4,7 +4,6 @@
 /* ---------------------------------------------------------------------------------------------------------------------------------------- */
 /* css for index.html */
 /* ------------------------------------------------------------------------------------------------------------------------------------------- */
-
 *{
     padding:0;
     margin:0;
@@ -154,10 +153,11 @@ body{
     text-align: justify;
     font-family: 'Dancing Script', cursive;
 
-}
+ }
 
 .txtonimg{
-
+    position: relative;
+    top: 50px;
     color: white;
     font-size:2.8em;
     overflow:hidden;
@@ -178,7 +178,6 @@ body{
 }
 .txtonimg1{ 
     color: white;
-
     font-size:2.3em;
     display: flex;
     margin: 2em 0;
@@ -288,6 +287,7 @@ body{
     background-color: #60d351;
  
 }
+
 .new-sliderbtn{
     background-color:#7A9B76;
     border: none;
@@ -537,7 +537,9 @@ var{
 	}
 
 
-/* ----------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------CSS for preloader-------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------------------------- */
 #wizard{
     background-color: #090330;
     width: 100%;
@@ -564,3 +566,48 @@ var{
 
     
 }
+/* @media screen and (max-width: 790px) and (min-width:1900px){
+    .logo{
+        position:relative;
+        left:1vw;
+        top:-5.5vw;
+        width:100em;
+    
+    }
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        margin: 2em 0;
+        position:relative;
+        width: 100vw;
+        top: 200px;
+        left:10px;  
+        justify-content: space-between;
+    }
+    .txtonimg{
+        font-size:1vw;
+        position:relative;
+        top:70px;
+        left:5px;
+    }
+    .bgimg{
+        filter: saturate(100%);
+        filter: brightness(90%);
+        height:100vh;
+        width: 100vw;
+        object-fit:cover;
+    }
+    .txtonimg1{ 
+        color: white;
+        font-size:2.0em;
+        display: flex;
+        margin: 2em 0;
+        padding-top: 10px;
+        animation-name: slidein;
+        animation-duration:3s;
+        animation-timing-function: ease-in;
+    
+    
+    }
+
+} */
