@@ -13,6 +13,15 @@ if(document.getElementById("wizard").style.display=="block"){
         document.getElementById("wizard").style.display="none";
     }
 }
+//-------------------------SWAP FUNCTION-----------------------------------------------------//
+//---------------------------------------------------------------------------------------------//
+// const childe = document.querySelector(".array");
+// const parent = childe.childNodes;
+// console.log(parent[1])
+// parent[1].style.
+// parent[1].style.backgroundColor="red";
+//---------------------------------------------------------------------------------------------//
+//------------------
     
 const arr=[];
 function generateRandom(id){
@@ -49,7 +58,7 @@ async function linearsearch(){
         ele.style.animation= "animate 3s linear 0s infinite normal forwards";
         await sleep(1500);
         if(arr[i]==key){
-            ele.style.animation= "me 2s linear 0s infinite normal forwards";
+            ele.style.animation= "gone 2s linear 0s infinite normal forwards";
             break;
         }else{
             ele.style.animation= "newani 4s ease 0s 1 normal forwards";
@@ -62,6 +71,7 @@ async function linearsearch(){
 function notNeeded(low,mid){
     while(low<=mid){
         let temp=low+1;
+        console.log(temp.toString());
         const element=document.getElementById(temp.toString());
         element.style.backgroundColor="red";
         low++;
@@ -184,9 +194,97 @@ async function insertionsort(){
     }
 }
    
+}
+// -----------------------------------------------------------------------------------------------
+//---------------------------------heap sort------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
 
+async function heapify(n,i)
+{
+    let temp=i+1;
+    let element=document.getElementById(temp.toString());
+    let largest = i; 
+    let l = 2 * i + 1; 
+    let temp1=l+1;
+    let element1=document.getElementById(temp1.toString());
+    let flag=false;
+   
+    let r = 2 * i + 2; 
+    let temp2=r+1;
+    let element2=document.getElementById(temp2.toString());
+    if (l < n && arr[l] > arr[largest]){
+        largest = l;
+    }
+    if (r < n && arr[r] > arr[largest]){
+        largest = r;
+        flag=true;
+    }
+    if (largest != i) {
+        let temp=arr[i];
+        arr[i]=arr[largest];
+        arr[largest]=arr[i];;
+        if(flag){
 
+            element.style.color="yellow";
+            element1.style.color="yellow";
+            await sleep(2000);
+            element.style.color="green";
+            element1.style.color="green";
+            element.textContent=arr[i].toString();
+            element1.textContent=arr[largest].toString();
+            await sleep(2000);
+            element.style.color="black";
+            element1.style.color="black";
+            await sleep(2000);
+            
+        }else{
+            element.style.color="yellow";
+            element2.style.color="yellow";
+            await sleep(2000);
+            element.style.color="green";
+            element2.style.color="green";
+            element.textContent=arr[i].toString();
+            element2.textContent=arr[largest].toString();
+            await sleep(2000);
+            element.style.color="black";
+            element2.style.color="black";
+            
+        }
+        await sleep(2000);
+        heapify(n,largest);
+    }
+}
+  
+let n=6;
+async function heapSort()
+{
 
-
-
+    console.log(arr);
+    for (let i =n/2-1; i >= 0; i--){
+        await sleep(2000)
+        heapify(n,i);
+    }
+    for (let i = 5; i > 0; i--) {
+        let temp1=1;
+        let temp=arr[0];
+        arr[0]=arr[i];
+        arr[i]=temp;
+        let element=document.getElementById(temp1.toString());
+        let temp2=i+1;
+        let element1=document.getElementById(temp2.toString());
+        element.style.color="yellow";
+        element1.style.color="yellow";
+        await sleep(2000);
+        element.style.color="green";
+        element1.style.color="green";
+        element.textContent=arr[0].toString();
+        element1.textContent=arr[i].toString();
+        await sleep(2000);
+        element.style.color="black";
+        element1.style.color="black";
+        await sleep(2000);
+        heapify(i,0);
+    }
+}
+ 
 
