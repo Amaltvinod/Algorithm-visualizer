@@ -1,4 +1,3 @@
-
 window.onload=function(){
     loader();
     generate();
@@ -14,18 +13,16 @@ if(document.getElementById("wizard").style.display=="block"){
         document.getElementById("wizard").style.display="none";
     }
 }
-
-
-
 //-------------------------SWAP FUNCTION-----------------------------------------------------//
 //---------------------------------------------------------------------------------------------//
-const childe = document.querySelector(".array");
-const parent = childe.childNodes;
-console.log(parent[1])
+// const childe = document.querySelector(".array");
+// const parent = childe.childNodes;
+// console.log(parent[1])
 // parent[1].style.
 // parent[1].style.backgroundColor="red";
 //---------------------------------------------------------------------------------------------//
-//---------------------------------------------------------------------------------------------//
+//------------------
+    
 const arr=[];
 function generateRandom(id){
      element=document.getElementById(id);
@@ -90,8 +87,10 @@ async function binarysearch(){
     document.getElementById("textbox").value="";
     while(low<=high){
         let mid=Math.floor(low+(high-low)/2);
+        console.log(mid);
         let temp=mid+1;
         let element=document.getElementById(temp.toString());
+        console.log(element);
         element.style.backgroundColor="cyan";
         await sleep(2000);
         if(key==arr[mid]){
@@ -100,20 +99,18 @@ async function binarysearch(){
             element.style.backgroundColor="green";
             await sleep(2000)
             break;     
-        }else{
-            if(key>arr[mid]){
-                let temp=low;
-                low++;
-                notNeeded(temp,mid);
-                await sleep(2000)  ;
             }else{
-                temp=high;
-                high=mid-1;
-                notNeeded(mid,temp);
-                await sleep(2000)  ;
+                if(key>arr[mid]){
+                    low=mid+1;
+                    notNeeded(low,mid);
+                    await sleep(2000)  ;
+                }else{
+                    high=mid-1;
+                    notNeeded(mid,high);
+                    await sleep(2000)  ;
+                    }
             }
         }
-    }
 }
 
 // selection sort javscript
@@ -139,21 +136,64 @@ async function selectionsort(){
                 element.style.backgroundColor="green"
                 secondelement.style.backgroundColor="green";
                 await sleep(1500);
-                element.style.backgroundColor="#ffff"
-                secondelement.style.backgroundColor="#ffff";
+                element.style.backgroundColor="#140A56"
+                secondelement.style.backgroundColor="#140A56";
                 await sleep(2000);
             }else{
                 element.style.backgroundColor="green"
                 secondelement.style.backgroundColor="green";
                 await sleep(1500);
-                element.style.backgroundColor="#ffff"
-                secondelement.style.backgroundColor="#ffff";
+                element.style.backgroundColor="#140A56"
+                secondelement.style.backgroundColor="#140A56";
                 await sleep(2000);
 
             }
         }
     }
 
+}
+//insertion sort javascript
+async function insertionsort(){
+    
+    for (let i = 1; i < 6; ++i) {
+        let key = arr[i];
+        let temp=i+1;
+        const element=document.getElementById(temp.toString());
+        let j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            
+            let temp1=j+1;
+            const secondelement=document.getElementById(temp1.toString());
+            element.style.backgroundColor="yellow"
+            secondelement.style.backgroundColor="yellow";
+            await sleep(2000);
+            element.style.backgroundColor="red";
+            secondelement.style.backgroundColor="red";
+            await sleep(2000);
+            element.style.backgroundColor="white";
+            let temp2=j+2;
+            const third=document.getElementById(temp2.toString());
+            third.style.backgroundColor="yellow";
+            secondelement.style.backgroundColor="yellow";
+            await sleep(2000);
+            arr[j + 1] = arr[j];
+            third.textContent=arr[j+1].toString();
+            third.style.backgroundColor="green";
+            await sleep(2000);
+            third.style.backgroundColor="white";
+            secondelement.style.backgroundColor="white";
+            await sleep(2000);
+            j = j - 1;
+            
+        }
+        temp=j+2;
+        secondelement=document.getElementById(temp.toString());
+        arr[j + 1] = key;
+        secondelement.textContent=arr[j+1].toString();
+        await sleep(1000);
+    }
+}
+   
 }
 // -----------------------------------------------------------------------------------------------
 //---------------------------------heap sort------------------------------------------------------
@@ -246,12 +286,5 @@ async function heapSort()
         heapify(i,0);
     }
 }
-   
-
-
-
-
-
-
-
+ 
 
