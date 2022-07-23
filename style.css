@@ -482,7 +482,7 @@ var{
         #49F324,
         red
 	);
-    --color:#49F324;
+    --color1:#49F324;
     
 }
 
@@ -490,18 +490,18 @@ var{
     0% {
         background-position: 0 0;
         background:none;
-        background-color:var(--color);
+        background-color:var(--color1);
     }
     10%{
         background-position: 200% 0;
-        background-color:var(--color);
+        background-color:var(--color1);
     }
     50% {
         background-position: 300% 0;
-        background-color:var(--color);
+        background-color:var(--color1);
     }
     100% {
-        background-color:var(--color);
+        background-color:var(--color1);
         background-position: 0 0;
     }
 }

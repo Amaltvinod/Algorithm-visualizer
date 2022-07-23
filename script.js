@@ -92,12 +92,13 @@ function notNeeded(low,mid){
 }
 
 async function binarysearch(){
+    // const root = document.querySelector(":root"); 
+    // root.style.setProperty("--gradient-shadow", 'white');
     let key=document.getElementById("textbox").value;
     key=parseInt(key);
-    console.log(key);
+    document.getElementById("textbox").value=key;
     let low=0;
     let high=5;
-    document.getElementById("textbox").value="";
     while(low<=high){
         let e1=document.getElementById("col1");
         document.style.backgroundColor="#A30015";
@@ -171,13 +172,15 @@ async function selectionsort(){
         for(let j=i+1;j<6;j++){
             let temp1=j+1;
             const secondelement=document.getElementById(temp1.toString());
+            element.style.transform="translate(0px,100px)"
+            // secondelement.style.transform="translate(0px,100px)" 
             element.style.color="yellow"
             secondelement.style.color="yellow";
-            await sleep(2000);
+            await sleep(1000);
             if(arr[i]>arr[j]){
                 element.style.color="red"
                 secondelement.style.color="red";
-                await sleep(2000);
+                await sleep(1000);
                 let temp=arr[i];
                 arr[i]=arr[j];
                 arr[j]=temp;
@@ -188,19 +191,39 @@ async function selectionsort(){
                 await sleep(1500);
                 element.style.color="#140A56"
                 secondelement.style.color="#140A56";
-                await sleep(2000);
+                await sleep(1000);
             }else{
                 element.style.color="green"
                 secondelement.style.color="green";
                 await sleep(1500);
                 element.style.color="#140A56"
                 secondelement.style.color="#140A56";
-                await sleep(2000);
+                await sleep(1000);
 
             }
         }
     }
+    document.getElementById(6).style.transform="translate(0px,100px)"
 
+    // const root = document.querySelector(":root"); //grabbing the root element
+    // root.style.setProperty("--gradient-shadow", 'linear-gradient(95deg, #140A56 0%, #A30015 100%)');
+    // root.style.backgroundSize="400%";
+    // root.style.width="cal(100% + 4px)";
+    // root.style.height="cal(100% + 4px)";
+    // root.style.zIndex="-1";
+    // root.style.animation="animate 5s linear infinite";
+
+
+
+
+
+    // document.getElementById(1).style.backgroundColor="white"
+    // document.getElementById(2).style.backgroundColor="white"
+    // document.getElementById(3).style.backgroundColor="white"
+    // document.getElementById(4).style.backgroundColor="white"
+    // document.getElementById(5).style.backgroundColor="white"
+    // document.getElementById(6).style.backgroundColor="white"
+   
 }
 //insertion sort javascript
 async function insertionsort(){
