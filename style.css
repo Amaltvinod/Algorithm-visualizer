@@ -326,6 +326,7 @@ body{
     background-color: #140A56;
     max-width: 45%;
     border-left:3px solid #7A9B76;
+    
     position: absolute;
     margin-top: 10px;
     right: 0;
@@ -400,6 +401,7 @@ body{
 .psuedo{
     color: white;
     font-size: 25px;
+
 
 }
 
