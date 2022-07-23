@@ -51,16 +51,29 @@ async function linearsearch(){
     let key=document.getElementById("textbox").value;
     key=parseInt(key);
     document.getElementById("textbox").value=key;
-
     for(let i=0;i<6;i++){
         let temp=i+1;
+        let element =document.getElementById("col1");
+        element.style.backgroundColor="#A30015";
+        element.style.width="100%";
+        let element1=document.getElementById("col2");
+        element1.style.backgroundColor="#A30015";
+        element1.style.width="100%";
+        await sleep(1500);
+        element1.style.backgroundColor="#140A56"
         ele=document.getElementById(temp.toString());
         ele.style.animation= "animate 3s linear 0s infinite normal forwards";
         await sleep(1500);
+        
         if(arr[i]==key){
             ele.style.animation= "gone 2s linear 0s infinite normal forwards";
+            element1.style.backgroundColor="#140A56"
+            element1=document.getElementById("col3")
+            element1.style.backgroundColor="#A30015";
+            element1.style.width="100%"
             break;
         }else{
+            element1.style.backgroundColor="#140A56"
             ele.style.animation= "newani 4s ease 0s 1 normal forwards";
             await sleep(1500);
 
@@ -86,25 +99,62 @@ async function binarysearch(){
     let high=5;
     document.getElementById("textbox").value="";
     while(low<=high){
+        let e1=document.getElementById("col1");
+        document.style.backgroundColor="#A30015";
+        e1.style.width="100%";
         let mid=Math.floor(low+(high-low)/2);
-        console.log(mid);
+        let e2=document.getElementById("col2");
+        document.style.backgroundColor="#A30015";
+        document.style.width="100%";
         let temp=mid+1;
         let element=document.getElementById(temp.toString());
         console.log(element);
         element.style.backgroundColor="cyan";
         await sleep(2000);
-        if(key==arr[mid]){
+        e2.style.backgroundColor="#140A56"
+        let e3=document.getElementById("col3");
+        e3.style.backgroundColor="A30015";
+        e3.style.width="100%";
+        await sleep(500);
+        e3.style.backgroundColor="#140A56";
+        if(key==arr[mid]){   
             temp=mid+1;
+            e3=document.getElementById("col4");
+            e3.style.backgroundColor="A30015";
+            e3.style.width="100%";
             element=document.getElementById(temp.toString());
             element.style.backgroundColor="green";
             await sleep(2000)
             break;     
-            }else{
-                if(key>arr[mid]){
-                    low=mid+1;
-                    notNeeded(low,mid);
-                    await sleep(2000)  ;
+        }else{
+            e3=document.getElementById("col5");
+            e3.style.backgroundColor="A30015";
+            e3.style.width="100%";
+            e3.style.backgroundColor="#140A56";
+            await sleep(500);
+            if(key>arr[mid]){
+                e3=document.getElementById("col6");
+                e3.style.backgroundColor="A30015";
+                e3.style.width="100%";
+                e3.style.backgroundColor="#140A56";
+                await sleep(200);
+                e3=document.getElementById("col7");
+                e3.style.backgroundColor="A30015";
+                e3.style.width="100%";
+                e3.style.backgroundColor="#140A56";
+                low=mid+1;
+                notNeeded(low,mid);
+                await sleep(2000)  ;
                 }else{
+                    e3=document.getElementById("col8");
+                    e3.style.backgroundColor="A30015";
+                    e3.style.width="100%";
+                    e3.style.backgroundColor="#140A56";
+                    await sleep(200);
+                    e3=document.getElementById("col9");
+                    e3.style.backgroundColor="A30015";
+                    e3.style.width="100%";
+                    e3.style.backgroundColor="#140A56";
                     high=mid-1;
                     notNeeded(mid,high);
                     await sleep(2000)  ;
@@ -121,30 +171,30 @@ async function selectionsort(){
         for(let j=i+1;j<6;j++){
             let temp1=j+1;
             const secondelement=document.getElementById(temp1.toString());
-            element.style.backgroundColor="yellow"
-            secondelement.style.backgroundColor="yellow";
+            element.style.color="yellow"
+            secondelement.style.color="yellow";
             await sleep(2000);
             if(arr[i]>arr[j]){
-                element.style.backgroundColor="red"
-                secondelement.style.backgroundColor="red";
+                element.style.color="red"
+                secondelement.style.color="red";
                 await sleep(2000);
                 let temp=arr[i];
                 arr[i]=arr[j];
                 arr[j]=temp;
                 element.textContent=arr[i].toString();
                 secondelement.textContent=arr[j].toString();
-                element.style.backgroundColor="green"
-                secondelement.style.backgroundColor="green";
+                element.style.color="green"
+                secondelement.style.color="green";
                 await sleep(1500);
-                element.style.backgroundColor="#140A56"
-                secondelement.style.backgroundColor="#140A56";
+                element.style.color="#140A56"
+                secondelement.style.color="#140A56";
                 await sleep(2000);
             }else{
-                element.style.backgroundColor="green"
-                secondelement.style.backgroundColor="green";
+                element.style.color="green"
+                secondelement.style.color="green";
                 await sleep(1500);
-                element.style.backgroundColor="#140A56"
-                secondelement.style.backgroundColor="#140A56";
+                element.style.color="#140A56"
+                secondelement.style.color="#140A56";
                 await sleep(2000);
 
             }
@@ -164,24 +214,22 @@ async function insertionsort(){
             
             let temp1=j+1;
             const secondelement=document.getElementById(temp1.toString());
-            element.style.backgroundColor="yellow"
-            secondelement.style.backgroundColor="yellow";
+            element.style.color="yellow"
+            secondelement.style.color="yellow";
             await sleep(2000);
-            element.style.backgroundColor="red";
-            secondelement.style.backgroundColor="red";
+            element.style.color="red";
+            secondelement.style.color="red";
             await sleep(2000);
-            element.style.backgroundColor="white";
             let temp2=j+2;
             const third=document.getElementById(temp2.toString());
-            third.style.backgroundColor="yellow";
-            secondelement.style.backgroundColor="yellow";
+            third.style.color="green";
+            secondelement.style.color="green";
             await sleep(2000);
             arr[j + 1] = arr[j];
             third.textContent=arr[j+1].toString();
-            third.style.backgroundColor="green";
             await sleep(2000);
-            third.style.backgroundColor="white";
-            secondelement.style.backgroundColor="white";
+            third.style.color="black";
+            secondelement.style.color="black";
             await sleep(2000);
             j = j - 1;
             
@@ -194,7 +242,6 @@ async function insertionsort(){
     }
 }
    
-}
 // -----------------------------------------------------------------------------------------------
 //---------------------------------heap sort------------------------------------------------------
 // -----------------------------------------------------------------------------------------------
