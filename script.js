@@ -1,6 +1,13 @@
 window.onload=function(){
     loader();
     generate();
+    if (window.location.href.match('binarysearch.html') != null){
+           generate();
+            generateSortedArray();
+    }else{
+      generate();
+    }
+    
 
 }
 
@@ -22,7 +29,7 @@ if(document.getElementById("wizard").style.display=="block"){
 // parent[1].style.backgroundColor="red";
 //---------------------------------------------------------------------------------------------//
 //------------------
-    
+
 const arr=[];
 function generateRandom(id){
      element=document.getElementById(id);
@@ -36,7 +43,14 @@ function generate(){
         arr[i]=generateRandom(temp.toString());
     }
 }
-
+function generateSortedArray(){
+    arr.sort();
+    for(let i=0;i<6;i++){
+       let temp=i+1;
+       element=document.getElementById(temp);
+       element.textContent=arr[i].toString();
+    }
+}
 // just toggle of side window
 function visibility(){
     document.getElementById("toggle").classList.toggle("visibility")
@@ -86,7 +100,7 @@ function notNeeded(low,mid){
         let temp=low+1;
         console.log(temp.toString());
         const element=document.getElementById(temp.toString());
-        element.style.backgroundColor="red";
+        element.style.animation= "newani 4s ease 0s 1 normal forwards";
         low++;
     }
 }
@@ -99,32 +113,30 @@ async function binarysearch(){
     document.getElementById("textbox").value=key;
     let low=0;
     let high=5;
+    let e1=document.getElementById("col1");
+    e1.style.backgroundColor="#A30015";
+    e1.style.width="100%";
     while(low<=high){
-        let e1=document.getElementById("col1");
-        document.style.backgroundColor="#A30015";
-        e1.style.width="100%";
         let mid=Math.floor(low+(high-low)/2);
         let e2=document.getElementById("col2");
-        document.style.backgroundColor="#A30015";
-        document.style.width="100%";
+        e2.style.backgroundColor="#A30015";
+        e2.style.width="100%";
         let temp=mid+1;
         let element=document.getElementById(temp.toString());
-        console.log(element);
-        element.style.backgroundColor="cyan";
+        element.style.color="cyan";
         await sleep(2000);
         e2.style.backgroundColor="#140A56"
         let e3=document.getElementById("col3");
         e3.style.backgroundColor="A30015";
         e3.style.width="100%";
-        await sleep(500);
-        e3.style.backgroundColor="#140A56";
+        await sleep(2000);
         if(key==arr[mid]){   
             temp=mid+1;
             e3=document.getElementById("col4");
             e3.style.backgroundColor="A30015";
             e3.style.width="100%";
             element=document.getElementById(temp.toString());
-            element.style.backgroundColor="green";
+            element.style.color="green";
             await sleep(2000)
             break;     
         }else{
@@ -143,8 +155,10 @@ async function binarysearch(){
                 e3.style.backgroundColor="A30015";
                 e3.style.width="100%";
                 e3.style.backgroundColor="#140A56";
+                let temp1=low;
                 low=mid+1;
-                notNeeded(low,mid);
+                element.style.color="white"
+                notNeeded(temp1,mid);
                 await sleep(2000)  ;
                 }else{
                     e3=document.getElementById("col8");
@@ -156,8 +170,10 @@ async function binarysearch(){
                     e3.style.backgroundColor="A30015";
                     e3.style.width="100%";
                     e3.style.backgroundColor="#140A56";
+                    let temp1=high
                     high=mid-1;
-                    notNeeded(mid,high);
+                    element.style.color="white";
+                    notNeeded(mid,temp1);
                     await sleep(2000)  ;
                     }
             }
@@ -166,9 +182,16 @@ async function binarysearch(){
 
 // selection sort javscript
 async function selectionsort(){
+    let el=document.getElementById("col1");
+    el.style.backgroundColor="#A30015";
+    el.style.width="100%";
     for(let i=0;i<5;i++){
         let temp=i+1;
         const element=document.getElementById(temp.toString());
+        let el1=document.getElementById("col2");
+        el1.style.backgroundColor="#A30015";
+        el1.style.width="100%";
+        await sleep(200);
         for(let j=i+1;j<6;j++){
             let temp1=j+1;
             const secondelement=document.getElementById(temp1.toString());
@@ -176,11 +199,18 @@ async function selectionsort(){
             // secondelement.style.transform="translate(0px,100px)" 
             element.style.color="yellow"
             secondelement.style.color="yellow";
+            let el2=document.getElementById("col3");
+            el2.style.backgroundColor="#A30015";
+            el2.style.width="100%";
             await sleep(1000);
+            el2.style.backgroundColor="#140A56";
             if(arr[i]>arr[j]){
                 element.style.color="red"
                 secondelement.style.color="red";
                 await sleep(1000);
+                el2=document.getElementById("col4");
+                el2.style.backgroundColor="#A30015";
+                el2.style.width="100%";
                 let temp=arr[i];
                 arr[i]=arr[j];
                 arr[j]=temp;
@@ -189,6 +219,7 @@ async function selectionsort(){
                 element.style.color="green"
                 secondelement.style.color="green";
                 await sleep(1500);
+                el2.style.backgroundColor="#140A56";
                 element.style.color="#140A56"
                 secondelement.style.color="#140A56";
                 await sleep(1000);
@@ -202,7 +233,10 @@ async function selectionsort(){
 
             }
         }
+        el1.style.backgroundColor="140A56";
+
     }
+    el.style.backgroundColor="140A56";
     document.getElementById(6).style.transform="translate(0px,100px)"
 
     // const root = document.querySelector(":root"); //grabbing the root element
@@ -227,7 +261,7 @@ async function selectionsort(){
 }
 //insertion sort javascript
 async function insertionsort(){
-    
+   
     for (let i = 1; i < 6; ++i) {
         let key = arr[i];
         let temp=i+1;
