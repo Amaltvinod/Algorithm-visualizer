@@ -117,6 +117,7 @@ async function binarysearch(){
     e1.style.backgroundColor="#A30015";
     e1.style.width="100%";
     while(low<=high){
+
         let mid=Math.floor(low+(high-low)/2);
         var e2=document.getElementById("col2");
         e2.style.backgroundColor="#A30015";
@@ -232,7 +233,6 @@ async function selectionsort(){
                 element.style.color="#140A56"
                 secondelement.style.color="#140A56";
                 await sleep(1000);
-
             }
         }
         el1.style.backgroundColor="140A56";
@@ -284,8 +284,8 @@ async function insertionsort(){
         let temp=i+1;
         const element=document.getElementById(temp.toString());
         let j = i - 1;
-
         while (j >= 0 && arr[j] > key) {
+
             let pelement2=document.getElementById("col5");
             pelement2.style.width="100%";
             pelement2.style.backgroundColor="#A30015";
@@ -293,11 +293,17 @@ async function insertionsort(){
             const secondelement=document.getElementById(temp1.toString());
             element.style.color="yellow"
             secondelement.style.color="yellow";
+            // pelement2.style.transform="translate(0px,100px)";
+            element.style.transform="translate(0px,100px)";
+            secondelement.style.transform="translate(0px,100px)";
             await sleep(2000);
             pelement2.style.backgroundColor="#140A56";
             element.style.color="red";
             secondelement.style.color="red";
             await sleep(2000);
+            // pelement2.style.transform="translate(0px,0px)";
+            element.style.transform="translate(0px,0px)";
+            secondelement.style.transform="translate(0px,0px)";
             let temp2=j+2;
             const third=document.getElementById(temp2.toString());
             third.style.color="green";
@@ -328,6 +334,7 @@ async function insertionsort(){
         pelement2.style.backgroundColor="#140A56";
         pelement1.style.backgroundColor="#140A56";
         await sleep(700);
+        
     }
 }
    
@@ -434,15 +441,19 @@ async function partition(low,high)
     // let temp3=j+1;
     let element=document.getElementById(temp1.toString());
     element.style.color="#D98324";
-    let rec=element.getBoundingClientRect();
-    let element1=document.getElementsByClassName("material-symbols-outlined");
-    element1.style.display="block";
-    console.log(rec.x);
-    element1.style.left=(rec.x+"px");
+    // let va=document.getElementsByClassName("i-val");
+    // va.style.display="block";
+    // let rec=element.getBoundingClientRect();
+    // let element1=document.getElementById("i-val");
+    // element1.style.display="block";
+    // console.log(rec.x);
+    // element1.style.left=(rec.x+"px");
     await sleep(2000);
     while (i < j)
     {
-        // let element.getElementById()
+        let element2=document.getElementById(arr[i].tostring());
+        let element3=document.getElementById(arr[j].tostring());
+
         while (pivot >= arr[i]){
             
             i++;

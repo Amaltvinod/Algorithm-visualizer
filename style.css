@@ -581,6 +581,12 @@ var{
 
     
 }
+#i-val{
+    
+    color: white;
+    position: absolute;
+    left: 55px;
+}
 /* @media screen and (max-width: 790px) and (min-width:1900px){
     .logo{
         position:relative;
