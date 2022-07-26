@@ -29,10 +29,9 @@
                     <div class="sub-menu-sort">
                         <ul>
                             <li><a href="selectionsort.html">Selection  Sort</a></li>
-                            <li><a href="#">Insertion Sort</a></li>
-                            <li><a href="#">Bubble Sort</a></li>
-                            <li><a href="#">Quick Sort</a></li>
-                            <li><a href="#">Heap Sort</a></li>
+                            <li><a href="insertionsort.html">Insertion Sort</a></li>
+                            <li><a href="quicksort.html">Quick Sort</a></li>
+                            <li><a href="heapsort.html">Heap Sort</a></li>
                         </ul>
                     </div>
                 </li>
@@ -70,12 +69,20 @@
                     <button class="sliderbtn" onclick="visibility() "><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" ><path d="M18.75 36.3 16.3 33.85 26.2 23.95 16.3 14.05 18.75 11.6 31.1 23.95Z"/></svg></button>
                     <div class="psuedo">
                         <br>
-                        <div id="col1"><pre><code><var>for</var>(int i=0;i &lt n-1;i++)<br>{</code></pre></div>
-                        <div id="col2"><pre><code>  <var>for</var>(int j=0;j &lt n;j++)<br>  </code></pre></div>
-                        <div><pre>{</pre></div>
-                        <div id="col3"><pre><code>     <var>if </var>(arr[i] &gt arr[j])  <br></code></pre></div>
-                        <div id="col4"><pre><code><var>        swap</var>(arr[i],arr[j]);</code></pre></div>
-                        <div id="col5"><pre><code>      }<br>   }<br>}</code></pre></div>
+                        <div id="col1"><pre><code><var>for</var>(int i=0;i &lt n;++i)</code></pre></div>
+                    <div><pre>{</pre></div>
+                        <div id="col2"><pre><code>  int key=arr[i];</code></pre></div>
+                        <div></div>
+                        <div id="col3"><pre><code>  int j=i-1;  <br></code></pre></div>
+                        <div id="col4"><pre><code><var>  while</var>(j>=0 && arr[j] > key){</code></pre></div>
+                        <div id="col5"><pre><code>      arr[j+1]=arr[j];</code></pre></div>
+                        <div id="col6"><pre><code>      j=j-1;</code></pre><br>
+                        </div>
+                        <div><pre>  }</pre></div>
+                        <div id="col7"><pre>  <code>arr[j+1]=key</code>
+                        </div>    
+                        <div><pre>}</pre></div>  
+                       
         
                     </div>
                     
