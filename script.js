@@ -1,4 +1,4 @@
-window.onload=function(){
+window.onload=()=>{
     loader();
     generate();
     if (window.location.href.match('binarysearch.html') != null){
@@ -10,7 +10,9 @@ window.onload=function(){
     
 
 }
-
+function sleep(ms){
+    return new Promise(resolve=>setTimeout(resolve,ms));
+}
 
 //  loader class
 async function loader(){
@@ -58,9 +60,7 @@ function visibility(){
 
 
 }
-function sleep(ms){
-    return new Promise(resolve=>setTimeout(resolve,ms));
-}
+
 async function linearsearch(){
     let key=document.getElementById("textbox").value;
     key=parseInt(key);
@@ -263,19 +263,38 @@ async function selectionsort(){
 }
 //insertion sort javascript
 async function insertionsort(){
-   
+   let pelement=document.getElementById("col1");
+   pelement.style.backgroundColor="#A30015";
+   pelement.style.width="100%"
     for (let i = 1; i < 6; ++i) {
         let key = arr[i];
+        let pelement1=document.getElementById("col2");
+        pelement1.style.backgroundColor="#A30015"
+        pelement1.style.width="100%";
+        await sleep(800);
+        pelement1.style.backgroundColor="#140A56"
+        pelement1=document.getElementById("col3")
+        pelement1.style.backgroundColor="#A30015"
+        pelement1.style.width="100%";
+        await  sleep(800);
+        pelement1.style.backgroundColor="#140A56";
+        pelement1=document.getElementById("col4");
+        pelement1.style.width="150%";
+        pelement1.style.backgroundColor="#A30015";
         let temp=i+1;
         const element=document.getElementById(temp.toString());
         let j = i - 1;
+
         while (j >= 0 && arr[j] > key) {
-            
+            let pelement2=document.getElementById("col5");
+            pelement2.style.width="100%";
+            pelement2.style.backgroundColor="#A30015";
             let temp1=j+1;
             const secondelement=document.getElementById(temp1.toString());
             element.style.color="yellow"
             secondelement.style.color="yellow";
             await sleep(2000);
+            pelement2.style.backgroundColor="#140A56";
             element.style.color="red";
             secondelement.style.color="red";
             await sleep(2000);
@@ -287,17 +306,28 @@ async function insertionsort(){
             arr[j + 1] = arr[j];
             third.textContent=arr[j+1].toString();
             await sleep(2000);
+            pelement2=document.getElementById("col6");
+            pelement2.style.backgroundColor="#A30015";
+            pelement2.style.width="100%";
             third.style.color="black";
             secondelement.style.color="black";
             await sleep(2000);
+            pelement2.style.backgroundColor="#140A56";
             j = j - 1;
             
         }
+       
         temp=j+2;
         secondelement=document.getElementById(temp.toString());
         arr[j + 1] = key;
         secondelement.textContent=arr[j+1].toString();
+        pelement2=document.getElementById("col7");
+        pelement2.style.backgroundColor="#A30015";
+        pelement2.style.width="100%";
         await sleep(1000);
+        pelement2.style.backgroundColor="#140A56";
+        pelement1.style.backgroundColor="#140A56";
+        await sleep(700);
     }
 }
    
@@ -364,8 +394,6 @@ async function heapify(n,i)
 let n=6;
 async function heapSort()
 {
-
-    console.log(arr);
     for (let i =n/2-1; i >= 0; i--){
         await sleep(2000)
         heapify(n,i);
@@ -392,5 +420,71 @@ async function heapSort()
         heapify(i,0);
     }
 }
+
+
+//quicksort.html
+async function partition(low,high)
+{
+    let i = low;
+    let j = high;
+    let pivot = arr[i];
+
+    let temp1=i+1;
+    // let temp2=i+1;
+    // let temp3=j+1;
+    let element=document.getElementById(temp1.toString());
+    element.style.color="#D98324";
+    let rec=element.getBoundingClientRect();
+    let element1=document.getElementsByClassName("material-symbols-outlined");
+    element1.style.display="block";
+    console.log(rec.x);
+    element1.style.left=(rec.x+"px");
+    await sleep(2000);
+    while (i < j)
+    {
+        // let element.getElementById()
+        while (pivot >= arr[i]){
+            
+            i++;
+        }   
+        while (pivot < arr[j]){
+            j--;
+        }
+        if (i < j){
+        let temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+        }
+            
+    }
+    let temp=arr[low];
+    arr[low]=arr[j];
+    arr[j]=temp;
+    return j;
+}
+  
+async function quickSort(low,high)
+{
+    if (low < high)
+    {
+        let pivot = partition(low, high);
+        quickSort(arr, low, pivot - 1);
+        quickSort(arr, pivot + 1, high);
+    }
+}
+async function quicksort(){
+    quickSort(0,5);
+}
+
+// let element=document.getElementById("1");
+// let rec=element.getBoundingClientRect();
+// console.log(rec.x+" "+rec.y);
+//  let element1=document.getElementById("2");
+//  let rec1=element1.getBoundingClientRect();
+//  console.log(rec1.x+" "+rec1.y);
+//  let element2=document.getElementById("3");
+//  let rec2=element2.getBoundingClientRect();
+//  console.log(rec2.x+" "+rec2.y);
+ 
  
 
