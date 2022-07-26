@@ -118,57 +118,59 @@ async function binarysearch(){
     e1.style.width="100%";
     while(low<=high){
         let mid=Math.floor(low+(high-low)/2);
-        let e2=document.getElementById("col2");
+        var e2=document.getElementById("col2");
         e2.style.backgroundColor="#A30015";
-        e2.style.width="100%";
+        e2.style.width="120%";
         let temp=mid+1;
         let element=document.getElementById(temp.toString());
         element.style.color="cyan";
         await sleep(2000);
         e2.style.backgroundColor="#140A56"
-        let e3=document.getElementById("col3");
-        e3.style.backgroundColor="A30015";
-        e3.style.width="100%";
+        var e3=document.getElementById("col3");
+        e3.style.backgroundColor="#A30015";
+        e3.style.width="200%";
         await sleep(2000);
         if(key==arr[mid]){   
             temp=mid+1;
-            e3=document.getElementById("col4");
-            e3.style.backgroundColor="A30015";
-            e3.style.width="100%";
+            var e4=document.getElementById("col4");
+            e4.style.backgroundColor="#A30015";
+            e4.style.width="100%";
             element=document.getElementById(temp.toString());
             element.style.color="green";
             await sleep(2000)
-            break;     
-        }else{
-            e3=document.getElementById("col5");
-            e3.style.backgroundColor="A30015";
-            e3.style.width="100%";
-            e3.style.backgroundColor="#140A56";
+            break;   
+        }
+        else{
+            var e5=document.getElementById("col5");
+            e5.style.backgroundColor="#A30015";
+            e5.style.width="200%";
             await sleep(500);
+            e5.style.backgroundColor="#140A56";
             if(key>arr[mid]){
-                e3=document.getElementById("col6");
-                e3.style.backgroundColor="A30015";
-                e3.style.width="100%";
+                var e3=document.getElementById("col6");
+                e3.style.backgroundColor="#A30015";
+                e3.style.width="200%";
+                await sleep(1500);
                 e3.style.backgroundColor="#140A56";
-                await sleep(200);
-                e3=document.getElementById("col7");
-                e3.style.backgroundColor="A30015";
+                var e3=document.getElementById("col7");
+                e3.style.backgroundColor="#A30015";
                 e3.style.width="100%";
-                e3.style.backgroundColor="#140A56";
                 let temp1=low;
                 low=mid+1;
                 element.style.color="white"
                 notNeeded(temp1,mid);
                 await sleep(2000)  ;
+                e3.style.backgroundColor="#140A56";
                 }else{
-                    e3=document.getElementById("col8");
-                    e3.style.backgroundColor="A30015";
+                    var e3=document.getElementById("col8");
+                    e3.style.backgroundColor="#A30015";
                     e3.style.width="100%";
+                    await sleep(2000);
                     e3.style.backgroundColor="#140A56";
-                    await sleep(200);
-                    e3=document.getElementById("col9");
-                    e3.style.backgroundColor="A30015";
+                    var e3=document.getElementById("col9");
+                    e3.style.backgroundColor="#A30015";
                     e3.style.width="100%";
+                    await sleep(1500);
                     e3.style.backgroundColor="#140A56";
                     let temp1=high
                     high=mid-1;
@@ -239,8 +241,8 @@ async function selectionsort(){
     el.style.backgroundColor="140A56";
     document.getElementById(6).style.transform="translate(0px,100px)"
 
-    // const root = document.querySelector(":root"); //grabbing the root element
-    // root.style.setProperty("--gradient-shadow", 'linear-gradient(95deg, #140A56 0%, #A30015 100%)');
+    const root = document.querySelector(":root"); //grabbing the root element
+    root.style.setProperty("--gradient-shadow", 'white');
     // root.style.backgroundSize="400%";
     // root.style.width="cal(100% + 4px)";
     // root.style.height="cal(100% + 4px)";
