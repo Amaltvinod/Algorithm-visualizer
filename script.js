@@ -46,7 +46,9 @@ function generate(){
     }
 }
 function generateSortedArray(){
-    arr.sort();
+    arr.sort(function (a,b){
+        return a-b;
+    });
     for(let i=0;i<6;i++){
        let temp=i+1;
        element=document.getElementById(temp);
@@ -131,6 +133,7 @@ async function binarysearch(){
         e3.style.backgroundColor="#A30015";
         e3.style.width="200%";
         await sleep(2000);
+        e3.style.backgroundColor="#140A56"
         if(key==arr[mid]){   
             temp=mid+1;
             var e4=document.getElementById("col4");
@@ -266,8 +269,9 @@ async function insertionsort(){
    let pelement=document.getElementById("col1");
    pelement.style.backgroundColor="#A30015";
    pelement.style.width="100%"
-    for (let i = 1; i < 6; ++i) {
+    for (let i = 1; i < 6; i++) {
         let key = arr[i];
+        let index=i;
         let pelement1=document.getElementById("col2");
         pelement1.style.backgroundColor="#A30015"
         pelement1.style.width="100%";
@@ -282,52 +286,63 @@ async function insertionsort(){
         pelement1.style.width="150%";
         pelement1.style.backgroundColor="#A30015";
         let temp=i+1;
-        const element=document.getElementById(temp.toString());
-        let j = i - 1;
+        let element=document.getElementById(temp.toString());
+        element.style.color="black";
+        element.style.backgroundColor="black";
+        let j = index - 1;
+        let secondelement;
         while (j >= 0 && arr[j] > key) {
-
+            // await sleep(1000);
             let pelement2=document.getElementById("col5");
             pelement2.style.width="100%";
             pelement2.style.backgroundColor="#A30015";
             let temp1=j+1;
-            const secondelement=document.getElementById(temp1.toString());
-            element.style.color="yellow"
-            secondelement.style.color="yellow";
+            secondelement=document.getElementById(temp1.toString());
+            secondelement.style.color="black";
+            secondelement.style.backgroundColor="white";
+
+            // secondelement.style.color="black";
+            // secondelement.style.backgroundColor="black";
+            arr[index]=arr[j]
+            // element.style.color="yellow"
+            // secondelement.style.color="yellow";
             // pelement2.style.transform="translate(0px,100px)";
-            element.style.transform="translate(0px,100px)";
-            secondelement.style.transform="translate(0px,100px)";
+            // element.style.transform="translate(0px,100px)";
+            // secondelement.style.transform="translate(0px,100px)";
             await sleep(2000);
+            element.textContent=arr[index].toString();
+            element.style.color="white";
+            element.style.color="#140A56";
+            element.style.color="black";
+            element.style.backgroundColor="white"
+            secondelement.style.color="black";
+            secondelement.style.backgroundColor="black";
             pelement2.style.backgroundColor="#140A56";
-            element.style.color="red";
-            secondelement.style.color="red";
-            await sleep(2000);
+            // element.style.color="red";
+            // secondelement.style.color="red";
+            // await sleep(2000);
             // pelement2.style.transform="translate(0px,0px)";
-            element.style.transform="translate(0px,0px)";
-            secondelement.style.transform="translate(0px,0px)";
-            let temp2=j+2;
-            const third=document.getElementById(temp2.toString());
-            third.style.color="green";
-            secondelement.style.color="green";
-            await sleep(2000);
-            arr[j + 1] = arr[j];
-            third.textContent=arr[j+1].toString();
-            await sleep(2000);
+            // element.style.transform="translate(0px,0px)";
+            // secondelement.style.transform="translate(0px,0px)";
+            // await sleep(2000);
             pelement2=document.getElementById("col6");
             pelement2.style.backgroundColor="#A30015";
             pelement2.style.width="100%";
-            third.style.color="black";
-            secondelement.style.color="black";
             await sleep(2000);
             pelement2.style.backgroundColor="#140A56";
+            index=j;
+            element=secondelement;
             j = j - 1;
             
         }
-       
+       console.log(j);
         temp=j+2;
+        arr[j+1] = key;
         secondelement=document.getElementById(temp.toString());
-        arr[j + 1] = key;
         secondelement.textContent=arr[j+1].toString();
-        pelement2=document.getElementById("col7");
+        secondelement.style.color="black";
+        secondelement.style.backgroundColor="white";
+        let pelement2=document.getElementById("col7");
         pelement2.style.backgroundColor="#A30015";
         pelement2.style.width="100%";
         await sleep(1000);
@@ -430,6 +445,106 @@ async function heapSort()
 
 
 //quicksort.html
+
+// async function partitionLomuto(ele, l, r){
+
+//     let i = l - 1;
+//     ele[r].style.background = 'cyan'; //pivot
+//     for(let j = l; j <= r - 1; j++){
+//         if(hasPressedStop == true){
+//             return;
+//         }
+//         ele[j].style.background = 'yellow'; //current element
+//         await sleep(1500);
+//         if(hasPressedStop == true){
+//             return;
+//         }
+//         if(parseInt(ele[j].style.height) < parseInt(ele[r].style.height)){
+//             i++;
+//             swap(ele[i], ele[j]);
+//             // color 
+//             ele[i].style.background = 'orange';
+//             if(i != j) ele[j].style.background = 'orange';
+//             // pauseChamp
+//             await sleep(1500);
+//         }
+//         else{
+//             // color if not less than pivot
+//             ele[j].style.background = 'pink';
+//         }
+//     }
+//     i++; 
+//     if(hasPressedStop == true){
+//         return;
+//     }
+//     await sleep(1500);
+//     if(hasPressedStop == true){
+//         return;
+//     }
+//     swap(ele[i], ele[r]);
+//     // color
+//     ele[r].style.background = 'pink';
+//     ele[i].style.background = 'green';
+
+//     if(hasPressedStop == true){
+//         return;
+//     }
+//     await sleep(1500);
+//     if(hasPressedStop == true){
+//         return;
+//     }
+    
+//     // color
+//     for(let k = 0; k < ele.length; k++){
+//         if(ele[k].style.background != 'green')
+//             ele[k].style.background = '#e43f5a';
+//     }
+
+//     return i;
+// }
+
+// async function quickSort(ele, l, r){
+//     if(l < r){
+//         let pivot_index = await partitionLomuto(ele, l, r);
+//         await quickSort(ele, l, pivot_index - 1);
+//         await quickSort(ele, pivot_index + 1, r);
+//     }
+//     else{
+//         if(l >= 0 && r >= 0 && l <ele.length && r <ele.length){
+//             ele[r].style.background = 'green';
+//             ele[l].style.background = 'green';
+//         }
+//     }
+// }
+
+
+// const quickSortbtn = document.querySelector(".quickSort");
+// quickSortbtn.addEventListener('click', async function(){
+//     let ele = document.querySelectorAll('.array');
+//     let l = 0;
+//     let r = ele.length - 1;
+//     disableSortingBtn();
+//     disableSizeSlider();
+//     disableNewArrayBtn();
+//     enableStopSortingBtn();
+//     await quickSort(ele, l, r);
+//     if(hasPressedStop==true){
+//         disableSpeedSlider();
+//     } else {
+//         enableSortingBtn();
+//         enableSizeSlider();
+//     }
+//     enableNewArrayBtn();
+//     disableStopSortingBtn();
+// });
+
+
+
+
+
+
+
+
 async function partition(low,high)
 {
     let i = low;
@@ -487,15 +602,15 @@ async function quicksort(){
     quickSort(0,5);
 }
 
-// let element=document.getElementById("1");
-// let rec=element.getBoundingClientRect();
-// console.log(rec.x+" "+rec.y);
-//  let element1=document.getElementById("2");
-//  let rec1=element1.getBoundingClientRect();
-//  console.log(rec1.x+" "+rec1.y);
-//  let element2=document.getElementById("3");
-//  let rec2=element2.getBoundingClientRect();
-//  console.log(rec2.x+" "+rec2.y);
+let element=document.getElementById("1");
+let rec=element.getBoundingClientRect();
+console.log(rec.x+" "+rec.y);
+ let element1=document.getElementById("2");
+ let rec1=element1.getBoundingClientRect();
+ console.log(rec1.x+" "+rec1.y);
+ let element2=document.getElementById("3");
+ let rec2=element2.getBoundingClientRect();
+ console.log(rec2.x+" "+rec2.y);
  
  
 

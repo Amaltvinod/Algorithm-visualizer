@@ -12,7 +12,7 @@
    
 
 </head>
-    <body>
+    <body >
         <div id="wizard">
             <img id="wiz" src="wizard.png"> 
         </div>
@@ -44,48 +44,28 @@
                 <li><a href="#">ABOUT</a></li>
             </ul>
         </div>
+        <div class="main-div">
+            <h1>
+                ABOUT
+            </h1>
+            <p class="about-para">
+                Algorithm Visualizer was conceptualised as a tool to help students to better understand data structures and algorithms, by allowing them to learn the basics on their own and at their own pace. Algorithm Visualizer contains algorithms like Linear Search, Binary Search, Selection Sort, Insertion Sort, Heap Sort, Quick Sort and so on. Though specifically designed for CEC students taking various data structure and algorithm classes (e.g., CST306/equivalent, CST201/equivalent, etc), we hope that curious minds around the world will find these visualizations useful too.
+            </p>
+            <p class="about-para">
+                Algorithm Visualizer is not designed to work well on small touch screens (e.g., smartphones) from the outset due to the need to cater for many algorithm visualizations that require lots of pixels and click gestures for interaction. The minimum screen resolution for a respectable user experience is 1920x1080. However, we are currently experimenting with a mobile (lite) version of Algorithm Visualizer to be ready by April 2023.
+            </p>
+            <p class="about-para">
+                Algorithm Visualizer is an ongoing project and more complex visualizations are still being developed.
+            </p>
+            <p class="about-para">
+                The most exciting development is the automated number generator that allows students to test their knowledge of basic data structures and algorithms.
+            </p>
+            <p class="about-para">
+                Our current page can only be viewed in English Language.
+            </p>
 
-        <div class="codevis">
-            <div class="array">
-                <div id="1"></div>
-                <div id="2"></div>
-                <div id="3"></div>
-                <div id="4"></div>
-                <div id="5"></div>
-                <div id="6"></div>
-                
-                
-            </div>
-            <div>
-                
-                <button onclick="linearsearch()" id="button">search</button>
-                <input type="text"  placeholder=" Enter the key to be searched"  class="text" id="textbox"/>
-                
-            </div>
-          
-            <div class="codeslide" id="toggle"> 
-                    <button class="sliderbtn" onclick="visibility() "><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" ><path d="M18.75 36.3 16.3 33.85 26.2 23.95 16.3 14.05 18.75 11.6 31.1 23.95Z"/></svg></button>
-                    <div class="psuedo">
-                        <br>
-                        <div id="col1"><pre><code><var>for</var>(int i=0;i &lt n;i++)<br></code></pre></div>
-                        <div><pre>{</pre></div>
-                        <div id="col2"><pre><code>  <var>if</var>(arr[i]==key)<br></code></pre></div>
-                        <div><pre>    {</pre></div>
-                        <div id="col3"><pre><code>       <var>return </var> i;  <br></code></pre></div>
-                        <div><pre>    }</pre></div>
-                        <div id="col4"><pre><code>}</code></pre></div>
-        
-                    </div>
-                    
-    
-    
-    
-    
-            </div>
         </div>
-         
-        <button class="new-sliderbtn" id="btn-toggle" onclick="visibility()"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M28.05 36 16 23.95 28.05 11.9 30.2 14.05 20.3 23.95 30.2 33.85Z"/></svg></button>
-   
-    <script  src="script.js"></script>
+    
+        <script  src="script.js"></script>  
     </body>
-</html> 
+</html>

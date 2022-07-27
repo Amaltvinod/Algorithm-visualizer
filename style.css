@@ -582,10 +582,24 @@ var{
     
 }
 #i-val{
-    
+    display: none;
     color: white;
     position: absolute;
     left: 55px;
+}
+.waiting-pic{
+    position: relative;
+    left: 250px;
+    top: 100px;
+
+}
+
+/* about page */
+
+.about-para{
+    padding-top: 15px;
+    font-size: 20px;
+    width: 85%;
 }
 /* @media screen and (max-width: 790px) and (min-width:1900px){
     .logo{
