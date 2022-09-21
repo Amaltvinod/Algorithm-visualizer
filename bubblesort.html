@@ -13,10 +13,6 @@
 
 </head>
     <body>
-        <div id="wizard">
-            <img id="wiz" src="wizard.png"> 
-        </div>
-
         <div class="menu-bar">
             <ul>
                 <li><img src="Amanda Wood.png" alt="" class="logo"></li>
@@ -32,7 +28,8 @@
                 <li><a href="#">SORTING</a>
                     <div class="sub-menu-sort">
                         <ul>
-                            <li><a href="selectionsort.html">Selection Sort</a></li>
+                            <li><a href="selectionsort.html">Selection  Sort</a></li>
+                            <!-- <li><a href="#">Insertion Sort</a></li> -->
                             <li><a href="insertionsort.html">Insertion Sort</a></li>
                             <li><a href="bubblesort.html">Bubble Sort</a></li>
                             <li><a href="heapsort.html">Heap Sort</a></li>
@@ -44,7 +41,6 @@
                 <li><a href="#">ABOUT</a></li>
             </ul>
         </div>
-
         <div class="codevis">
             <div class="array">
                 <div id="1"></div>
@@ -53,34 +49,28 @@
                 <div id="4"></div>
                 <div id="5"></div>
                 <div id="6"></div>
-                
-                
+                <button onclick="bubbleSort()" id="button">sort</button>
             </div>
             <div>
-                
-                <button onclick="linearsearch()" id="button">search</button>
-                <input type="text"  placeholder=" Enter the key to be searched"  class="text" id="textbox"/>
-                
+                <h2 id ="des"></h2>
             </div>
-          
+     
             <div class="codeslide" id="toggle"> 
                     <button class="sliderbtn" onclick="visibility() "><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" ><path d="M18.75 36.3 16.3 33.85 26.2 23.95 16.3 14.05 18.75 11.6 31.1 23.95Z"/></svg></button>
                     <div class="psuedo">
                         <br>
-                        <div id="col1"><pre><code><var>for</var>(int i=0;i &lt n;i++)<br></code></pre></div>
-                        <div><pre>{</pre></div>
-                        <div id="col2"><pre><code>  <var>if</var>(arr[i]==key)<br></code></pre></div>
-                        <div><pre>    {</pre></div>
-                        <div id="col3"><pre><code>       <var>return </var> i;  <br></code></pre></div>
-                        <div><pre>    }</pre></div>
-                        <div id="col4"><pre><code>}</code></pre></div>
+                        <div id="col1"><pre><code><var>function bubbleSort</var>( arr, n)<br>{</code></pre></div>
+                        <div id="col2"><pre><code>  <var>var</var> i, j;<br></code></pre></div>
+                        <div id="col3"><pre><code>  <var>for </var>(i = 0; i < n-1; i++)<br>  {</code></pre></div>
+                        <div id="col3"><pre><code>  <var>for </var>(j = 0; j < n-i-1; j++)<br>  {</code></pre></div>
+                        <div id="col4"><pre><code><var>     if </var>(arr[j] > arr[j+1])</code></pre></div>
+                        <div id="col5"><pre><code>     {<br><var>        swap</var>(arr,j,j+1);</code></pre></div>
+                        <div id="col6"><pre><code>     }</code></pre></div>
+                        <div id="col7"><pre><code>   }</code></pre></div>
+                        <div id="col7"><pre><code> }</code></pre></div>
         
                     </div>
-                    
-    
-    
-    
-    
+  
             </div>
         </div>
          
@@ -88,4 +78,4 @@
    
     <script  src="script.js"></script>
     </body>
-</html> 
+    </html>

@@ -443,174 +443,236 @@ async function heapSort()
     }
 }
 
-
+//============================================================================================================================================================
 //quicksort.html
-
-// async function partitionLomuto(ele, l, r){
-
-//     let i = l - 1;
-//     ele[r].style.background = 'cyan'; //pivot
-//     for(let j = l; j <= r - 1; j++){
-//         if(hasPressedStop == true){
-//             return;
-//         }
-//         ele[j].style.background = 'yellow'; //current element
-//         await sleep(1500);
-//         if(hasPressedStop == true){
-//             return;
-//         }
-//         if(parseInt(ele[j].style.height) < parseInt(ele[r].style.height)){
-//             i++;
-//             swap(ele[i], ele[j]);
-//             // color 
-//             ele[i].style.background = 'orange';
-//             if(i != j) ele[j].style.background = 'orange';
-//             // pauseChamp
-//             await sleep(1500);
-//         }
-//         else{
-//             // color if not less than pivot
-//             ele[j].style.background = 'pink';
-//         }
-//     }
-//     i++; 
-//     if(hasPressedStop == true){
-//         return;
-//     }
-//     await sleep(1500);
-//     if(hasPressedStop == true){
-//         return;
-//     }
-//     swap(ele[i], ele[r]);
-//     // color
-//     ele[r].style.background = 'pink';
-//     ele[i].style.background = 'green';
-
-//     if(hasPressedStop == true){
-//         return;
-//     }
-//     await sleep(1500);
-//     if(hasPressedStop == true){
-//         return;
-//     }
-    
-//     // color
-//     for(let k = 0; k < ele.length; k++){
-//         if(ele[k].style.background != 'green')
-//             ele[k].style.background = '#e43f5a';
-//     }
-
-//     return i;
-// }
-
-// async function quickSort(ele, l, r){
-//     if(l < r){
-//         let pivot_index = await partitionLomuto(ele, l, r);
-//         await quickSort(ele, l, pivot_index - 1);
-//         await quickSort(ele, pivot_index + 1, r);
-//     }
-//     else{
-//         if(l >= 0 && r >= 0 && l <ele.length && r <ele.length){
-//             ele[r].style.background = 'green';
-//             ele[l].style.background = 'green';
-//         }
-//     }
-// }
-
-
-// const quickSortbtn = document.querySelector(".quickSort");
-// quickSortbtn.addEventListener('click', async function(){
-//     let ele = document.querySelectorAll('.array');
-//     let l = 0;
-//     let r = ele.length - 1;
-//     disableSortingBtn();
-//     disableSizeSlider();
-//     disableNewArrayBtn();
-//     enableStopSortingBtn();
-//     await quickSort(ele, l, r);
-//     if(hasPressedStop==true){
-//         disableSpeedSlider();
-//     } else {
-//         enableSortingBtn();
-//         enableSizeSlider();
-//     }
-//     enableNewArrayBtn();
-//     disableStopSortingBtn();
-// });
-
-
-
-
-
-
-
-
-async function partition(low,high)
-{
-    let i = low;
-    let j = high;
-    let pivot = arr[i];
-
-    let temp1=i+1;
-    // let temp2=i+1;
-    // let temp3=j+1;
-    let element=document.getElementById(temp1.toString());
-    element.style.color="#D98324";
-    // let va=document.getElementsByClassName("i-val");
-    // va.style.display="block";
-    // let rec=element.getBoundingClientRect();
-    // let element1=document.getElementById("i-val");
-    // element1.style.display="block";
-    // console.log(rec.x);
-    // element1.style.left=(rec.x+"px");
-    await sleep(2000);
-    while (i < j)
-    {
-        let element2=document.getElementById(arr[i].tostring());
-        let element3=document.getElementById(arr[j].tostring());
-
-        while (pivot >= arr[i]){
-            
-            i++;
-        }   
-        while (pivot < arr[j]){
-            j--;
-        }
-        if (i < j){
-        let temp=arr[i];
-        arr[i]=arr[j];
-        arr[j]=temp;
-        }
-            
-    }
-    let temp=arr[low];
-    arr[low]=arr[j];
-    arr[j]=temp;
-    return j;
+function swap(i, j) {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
 }
+
+// function partition(low, high) {
+  
+//     // pivot
+//     let pivot = arr[high];
+//     let temp=high+1;
+//     let element1=document.getElementById(temp.toString())
+//     let elementp=document.getElementById("pivot-val");
+//     let recpivot=element1.getBoundingClientRect();
+//     elementp.style.display="block";
+//     let lenp = recpivot.y.toString()+ "px";
+//     elementp.style.transform = "translate(0px,$lenp))";
+
+  
+//     // Index of smaller element and
+//     // indicates the right position
+//     // of pivot found so far
+//     let i = (low - 1);
+//     let temp1=i+2;
+//     let element2=document.getElementById(temp1.toString());
+//     console.log(element2)
+//     let elementi=document.getElementById("i-val");
+//     elementi.style.display="block";
+//     let reci=element2.getBoundingClientRect();
+//     let leni=reci.y.toString() + "px";
+//     elementi.style.transform="translate(0px,$leni)";
+
+//     for (let j = low; j <= high - 1; j++) {
+//         let temp2=j+1;
+//         let element3=document.getElementById(temp2.toString());
+//         let elementj=document.getElementById("j-val");
+//         elementj.style.display="block";
+//         let recj=element3.getBoundingClientRect();
+//         let lenj=recj.y.toString()+"px";
+//         element3.style.transform="translate(0px,$lenj)"
+//         // If current element is smaller 
+//         // than the pivot
+//         if (arr[j] < pivot) {
+//             element1.style.color="yellow";
+//             element3.style.color="yellow";
+//             // Increment index of 
+//             // smaller element
+//             i++;
+//             temp1=i+1;
+//             element2=document.getElementById(temp1.toString());
+//             reci=element2.getBoundingClientRect();
+//             leni=reci.y.toString()+ "px";
+//             elementi.style.transform="translate(0px,$leni)";
+//             swap(i, j);
+            
+//             element2.textContent=arr[i].toString();
+//             element3.textContent=arr[j].toString();
+//         }
+//         element1.style.color="black";
+//         element3.style.color="black";
+//     }
+//     swap( i + 1, high);
+//     let temp4=i+1;
+//     let element4=document.getElementById(temp4.toString());
+//     console.log(temp4);
+//     console.log(element4);
+//     element4.textContent=arr[high].toString();
+//     element1.textContent=arr[i+1].toString();
+//     return (i + 1);
+// }
+
+//============================================================================================================================
+// async function partition(low,high)
+// {
+//     let i = low;
+//     let j = high;
+//     let pivot = arr[j];
+//     let temp1=i+1;
+//     let temp2=j+1;
+//     // console.log(pivot);
+//     // let element=document.createElement("p");
+//     // let text=document.createTextNode("(Pivot)");
+//     // element.appendChild(text);
+//     // var newele = document.getElementById((j+1).toString());
+//     // newele.appendChild(element);
+
+//     // let va=document.getElementsByClassName("i-val");
+//     // va.style.display="block";
+//     let element1=document.getElementById(temp2.toString())
+//     let element=document.getElementById("pivot-val");
+//     let recpivot=element1.getBoundingClientRect();
+//     // console.log(typeof(rec));
+//     element.style.display="block";
+//     await sleep(2000);
+    // let lenp = recpivot.y.toString()+ "px";
+    // element.style.transform="translate(0px,lenp))";
+    
+//     // element1.style.left=(rec.x+"px");
+//     console.log(i,j)
+//     while (i < j)
+//     {
+//         let temp=i+1;
+//         let temp1=j+1;
+
+//         let elementi=document.getElementById("i-val")
+//         let elementj=document.getElementById("j-val")
+//         elementi.style.display="block"
+//         elementj.style.display="block"
+//         let element2=document.getElementById(temp.toString());
+//         let element3=document.getElementById(temp1.toString());
+//         let reci=element2.getBoundingClientRect();
+//         let recj=element3.getBoundingClientRect();
+//         let leni=reci.y.toString()+"px";
+//         let lenj=recj.y.toString()+"px";
+//         elementi.style.transform="translate(0px,leni))";
+//         elementj.style.transform="translate(0px,lenj))";
+
+        
+
+//         while (pivot >arr[i]){
+        
+//             i++;
+//             temp++;
+//             element2=document.getElementById(temp.toString());
+//             console.log(element2);
+//             reci=element2.getBoundingClientRect();
+//             leni=reci.y.toString()+"px";
+//             elementi.style.transform="translate(0px,leni))";
+//         }   
+//         while (pivot < arr[j]){
+//             j--;
+//             temp1--;
+//             element3=document.getElementById(temp1.toString());
+//             recj=element3.getBoundingClientRect();
+//             lenj=recj.y.toString()+"px";
+//             elementj.style.transform="translate(0px,lenj))";
+//         }
+//         if (i < j){
+//             let temp=arr[i];
+//             arr[i]=arr[j];
+//             arr[j]=temp;
+//             element2.textContent=arr[i].toString();
+//             element3.textContent=arr[j].toString();
+
+        
+//         }
+            
+//      temp=arr[low];
+//     arr[low]=arr[j];
+//     arr[j]=temp;
+//     element2.textContent=arr[i].toString();
+//     element3.textContent=arr[j].toString();
+    
+//     }
+//     return j;
+// }
   
 async function quickSort(low,high)
 {
     if (low < high)
     {
         let pivot = partition(low, high);
-        quickSort(arr, low, pivot - 1);
-        quickSort(arr, pivot + 1, high);
+
+        quickSort(low, pivot - 1);
+        quickSort(pivot + 1, high);
     }
 }
 async function quicksort(){
     quickSort(0,5);
+    console.log(arr);
 }
 
-let element=document.getElementById("1");
-let rec=element.getBoundingClientRect();
-console.log(rec.x+" "+rec.y);
- let element1=document.getElementById("2");
- let rec1=element1.getBoundingClientRect();
- console.log(rec1.x+" "+rec1.y);
- let element2=document.getElementById("3");
- let rec2=element2.getBoundingClientRect();
- console.log(rec2.x+" "+rec2.y);
+// let element=document.getElementById("1");
+// let rec=element.getBoundingClientRect();
+// console.log(rec.x+" "+rec.y);
+//  let element1=document.getElementById("2");
+//  let rec1=element1.getBoundingClientRect();
+//  console.log(rec1.x+" "+rec1.y);
+//  let element2=document.getElementById("3");
+//  let rec2=element2.getBoundingClientRect();
+//  console.log(rec2.x+" "+rec2.y);
  
- 
+//============================================BUBBLE SORT==================================================
+async function bubbleSort(){
 
+    let i=0, j=0,len = 6;
+    let el=document.getElementById("col1");
+    el.style.backgroundColor="#A30015";
+    el.style.width="100%";
+    for (i=0; i < len; i++){
+        await sleep(200);
+        for (j=0; j < (len-i-1); j++){
+            let t= j+1;
+            let t1 = t+1;
+            await sleep(1000);
+ 
+            let ele = document.getElementById(t.toString());
+            let ele1 = document.getElementById(t1.toString());
+            let ele2 = document.getElementById("des");
+
+            ele.style.transform="translate(0px,100px)";
+            ele1.style.transform="translate(0px,100px)";
+
+            if (arr[j] > arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                ele2.style.color="Green";
+                ele2.innerHTML="Swapping since "+arr[j+1].toString()+" > "+arr[j].toString();
+                await sleep(1000);
+                ele.textContent=arr[j].toString();
+                ele1.textContent=arr[j+1].toString();
+                await sleep(1000);
+                ele2.innerHTML="";
+            }
+            else{
+                ele2.style.color="red";
+                ele2.innerHTML="No swapping since "+arr[j+1].toString()+" > "+arr[j].toString();
+                await sleep(1000);
+                ele.style.transform="translate(0px,0px)";
+                ele1.style.transform="translate(0px,0px)";
+                await sleep(1000);
+                ele2.innerHTML="";
+            }
+            await sleep(1000);
+            ele.style.transform="translate(0px,0px)";
+            ele1.style.transform="translate(0px,0px)";
+  
+        }
+    }
+}

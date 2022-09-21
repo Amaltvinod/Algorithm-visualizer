@@ -581,11 +581,23 @@ var{
 
     
 }
+#pivot-val{
+    display: none;
+    color: white;
+    position: absolute;
+    left: 40px;
+}
 #i-val{
     display: none;
     color: white;
     position: absolute;
-    left: 55px;
+
+}
+#j-val{
+    display: none;
+    color: white;
+    position: absolute;
+    
 }
 .waiting-pic{
     position: relative;
@@ -600,6 +612,20 @@ var{
     padding-top: 15px;
     font-size: 20px;
     width: 85%;
+}
+
+
+/* Bubble sort just writing stuff style */
+
+#des{
+    display: flex;
+    position: relative;
+    top: 100px;
+    justify-content: center;
+    color:white;
+    font-weight:700;
+    font-size:large;
+    font-family: 'Roboto', sans-serif;  
 }
 /* @media screen and (max-width: 790px) and (min-width:1900px){
     .logo{
