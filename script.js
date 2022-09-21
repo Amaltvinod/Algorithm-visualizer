@@ -216,7 +216,7 @@ async function selectionsort(){
                 await sleep(1000);
                 el2=document.getElementById("col4");
                 el2.style.backgroundColor="#A30015";
-                el2.style.width="100%";
+                el2.style.width="120%";
                 let temp=arr[i];
                 arr[i]=arr[j];
                 arr[j]=temp;
@@ -264,6 +264,7 @@ async function selectionsort(){
     // document.getElementById(6).style.backgroundColor="white"
    
 }
+// =========================================================INSERTION SORT========================================================================================
 //insertion sort javascript
 async function insertionsort(){
    let pelement=document.getElementById("col1");
@@ -300,15 +301,7 @@ async function insertionsort(){
             secondelement=document.getElementById(temp1.toString());
             secondelement.style.color="black";
             secondelement.style.backgroundColor="white";
-
-            // secondelement.style.color="black";
-            // secondelement.style.backgroundColor="black";
-            arr[index]=arr[j]
-            // element.style.color="yellow"
-            // secondelement.style.color="yellow";
-            // pelement2.style.transform="translate(0px,100px)";
-            // element.style.transform="translate(0px,100px)";
-            // secondelement.style.transform="translate(0px,100px)";
+            arr[index]=arr[j];
             await sleep(2000);
             element.textContent=arr[index].toString();
             element.style.color="white";
@@ -318,13 +311,6 @@ async function insertionsort(){
             secondelement.style.color="black";
             secondelement.style.backgroundColor="black";
             pelement2.style.backgroundColor="#140A56";
-            // element.style.color="red";
-            // secondelement.style.color="red";
-            // await sleep(2000);
-            // pelement2.style.transform="translate(0px,0px)";
-            // element.style.transform="translate(0px,0px)";
-            // secondelement.style.transform="translate(0px,0px)";
-            // await sleep(2000);
             pelement2=document.getElementById("col6");
             pelement2.style.backgroundColor="#A30015";
             pelement2.style.width="100%";
@@ -353,9 +339,8 @@ async function insertionsort(){
     }
 }
    
-// -----------------------------------------------------------------------------------------------
-//---------------------------------heap sort------------------------------------------------------
-// -----------------------------------------------------------------------------------------------
+
+//==========================================================HEAP SORT========================================================================================================================
 
 async function heapify(n,i)
 {
@@ -416,7 +401,7 @@ async function heapify(n,i)
 let n=6;
 async function heapSort()
 {
-    for (let i =n/2-1; i >= 0; i--){
+    for (let i =n/2-1; i >= 0; i--){    
         await sleep(2000)
         heapify(n,i);
     }
@@ -443,8 +428,9 @@ async function heapSort()
     }
 }
 
-//============================================================================================================================================================
+//==============================================================QUICK SORT==============================================================================================
 //quicksort.html
+
 function swap(i, j) {
     let temp = arr[i];
     arr[i] = arr[j];
@@ -627,16 +613,24 @@ async function quicksort(){
 //  let rec2=element2.getBoundingClientRect();
 //  console.log(rec2.x+" "+rec2.y);
  
-//============================================BUBBLE SORT==================================================
-async function bubbleSort(){
 
+
+//============================================BUBBLE SORT================================================================================================================================================
+
+async function bubbleSort(){
     let i=0, j=0,len = 6;
     let el=document.getElementById("col1");
     el.style.backgroundColor="#A30015";
-    el.style.width="100%";
+    el.style.width="120%";
     for (i=0; i < len; i++){
+        let el1=document.getElementById("col4");
+        el1.style.backgroundColor="#A30015";
+        el1.style.width="110%";
         await sleep(200);
         for (j=0; j < (len-i-1); j++){
+            let el2=document.getElementById("col5");
+            el2.style.backgroundColor="#A30015";
+            el2.style.width="135%";
             let t= j+1;
             let t1 = t+1;
             await sleep(1000);
@@ -649,16 +643,27 @@ async function bubbleSort(){
             ele1.style.transform="translate(0px,100px)";
 
             if (arr[j] > arr[j+1]){
+                let el3=document.getElementById("col7");
+                el3.style.backgroundColor="#A30015";
+                el3.style.width="120%";
                 let temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
-                ele2.style.color="Green";
+                ele2.style.color="green";
+                let el4=document.getElementById("col9");
+                await sleep(200);
+                el4.style.backgroundColor="#A30015";
+                el4.style.width="120%";
                 ele2.innerHTML="Swapping since "+arr[j+1].toString()+" > "+arr[j].toString();
                 await sleep(1000);
                 ele.textContent=arr[j].toString();
                 ele1.textContent=arr[j+1].toString();
                 await sleep(1000);
                 ele2.innerHTML="";
+                el4.style.backgroundColor="transparent";
+                await sleep(200);
+                el3.style.backgroundColor="transparent";
+                
             }
             else{
                 ele2.style.color="red";
@@ -669,6 +674,8 @@ async function bubbleSort(){
                 await sleep(1000);
                 ele2.innerHTML="";
             }
+            await sleep(200);
+            el2.style.backgroundColor="transparent";
             await sleep(1000);
             ele.style.transform="translate(0px,0px)";
             ele1.style.transform="translate(0px,0px)";
